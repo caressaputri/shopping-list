@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Shopping List Page</h1>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="header.png" alt="Header Image">
+          </a>
+        </div>
+      </nav>
 
     <h5>Name:</h5>
     <p>{{name}}</p>
@@ -24,6 +30,13 @@
             <td>{{product.price}}</td>
             <td>{{product.description}}</td>
             <td>{{product.date_added}}</td>
+            <td>
+                <a href = "{% url 'main:edit_product' product.pk %}">
+                    <button>
+                        Edit
+                    </button>
+                </a>
+            </td>
         </tr>
     {% endfor %}
 </table>
@@ -31,13 +44,18 @@
 <br />
 
 <a href="{% url 'main:create_product' %}">
-    <button>
-        Add New Product
-    </button>
+    <nav class = "navbar bg-body-tertiary">
+        <from class = "container-fluid justify-content-start">
+            <button class = "btn btn-outline-success me-2" type="button">Add New Product</button>
+        </from>
+    </nav>
+
 <a href="{% url 'main:logout' %}">
-    <button>
-        Logout
-    </button>
+    <nav class = "navbar bg-body-tertiary">
+        <from class = "container-fluid justify-content-start">
+            <button class = "btn btn-outline-success me-2" type="button">Logout</button>
+        </from>
+    </nav>
     <h5>Sesi terakhir login: {{ last_login }}</h5>
 </a>
 
