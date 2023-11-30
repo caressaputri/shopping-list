@@ -6,26 +6,22 @@
 
 {% block content %}
 
-<div class = "login">
-
+<div class="login">
     <h1>Login</h1>
-
-    <form method="POST" action="">
+    <form method="POST">
         {% csrf_token %}
         <table>
             <tr>
                 <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
+                <td><input type="text" name="username" placeholder="Username" class="form-control"/></td>
             </tr>
-                    
             <tr>
                 <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
+                <td><input type="password" name="password" placeholder="Password" class="form-control"/></td>
             </tr>
-
             <tr>
                 <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
+                <td><input type="submit" value="submit" class="btn login_btn"/></td>
             </tr>
         </table>
     </form>
@@ -36,8 +32,8 @@
                 <li>{{ message }}</li>
             {% endfor %}
         </ul>
-    {% endif %}     
-        
+    {% endif %}
+
     Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
 
 </div>

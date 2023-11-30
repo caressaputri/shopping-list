@@ -3,9 +3,7 @@
 {% load static %}
 
 {% block content %}
-
 <h1>Edit Product</h1>
-
 <form method="POST">
     {% csrf_token %}
     <table>
@@ -13,10 +11,9 @@
         <tr>
             <td></td>
             <td>
-                <input type="submit" value="Edit Product"/>
+                <input type="submit" value="Edit Product">
             </td>
         </tr>
     </table>
 </form>
-
-{% endblock %}
+{% endblock content %}
